@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Poc.Contract.Command.StatusCallbackURL.Request;
+using Poc.Contract.Command.TryWhatsApp.Request;
 using Poc.SendGrid.API.Extensions;
 using Poc.SendGrid.API.Models;
 using System.ComponentModel;
@@ -15,32 +15,40 @@ namespace Poc.SendGrid.API.Controllers;
 [Produces("application/json")]
 [ApiController]
 [Description("Controller responsável por cadastrar registro.")]
-[ApiExplorerSettings(GroupName = "SandboxConfiguration")]
-public class SandboxConfigurationController : ControllerBase
+[ApiExplorerSettings(GroupName = "SendGrid")]
+public class SendGridController : ControllerBase
 {
     private readonly IMediator _mediator;
-    private readonly ILogger<SandboxConfigurationController> _logger;
+    private readonly ILogger<SendGridController> _logger;
 
     /// <summary>
     /// Construtor do controlador de registro.
     /// </summary>
     /// <param name="logger">Serviço para log de operações e erros.</param>
     /// <param name="mediator">Mediador para operações CQRS.</param>
-    public SandboxConfigurationController(ILogger<SandboxConfigurationController> logger, IMediator mediator)
+    public SendGridController(ILogger<SendGridController> logger, IMediator mediator)
     {
         _mediator = mediator;
         _logger = logger;
     }
 
     /// <summary>
-    /// Sandbox Configuration
+    /// Envie uma mensagem de iniciativa empresarial
+    /// Nesta etapa, você pode iniciar uma conversa comercial com seus usuários. 
+    /// As conversas iniciadas pelos negócios exigiam o uso de modelos pré-aprovados até que o usuário respondesse. 
+    /// Escolha um de nossos modelos pré-aprovados para iniciar uma conversa de negócios. 
+    /// Depois que seus clientes responderem, você poderá enviar mensagens de formato gratuito nas próximas 24 horas após a mensagem original.
+    /// 
+    /// Agendamentos
+    /// EX: Your appointment is coming up on July 21 at 3PM
+    /// EX: Your appointment is coming up on {{1}} at {{2}}
     /// </summary>
     /// <param name="command"></param>
     /// <response code="200">Retorna a resposta com a mensagem de sucesso.</response>
     /// <response code="400">Retorna lista de erros, se a requisição for inválida.</response>
     /// <response code="404">Quando nenhum registro é encontrado pelo Id fornecido.</response>
     /// <response code="500">Quando ocorre um erro interno inesperado no servidor.</response>
-    [HttpPost("StatusCallbackURL")]
+    [HttpPost("WebAPI")]
     [Consumes(MediaTypeNames.Application.Json)]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status200OK)]
@@ -48,8 +56,7 @@ public class SandboxConfigurationController : ControllerBase
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status500InternalServerError)]
     //[Authorize(Roles = $"{RoleUserAuthConstants.Notification}, {RoleUserAuthConstants.PostNotification}")]
-    public async Task<IActionResult> StatusCallbackURL([FromBody] CreateCallbackURLCommand command)
+    public async Task<IActionResult> SendBusinessInitiatedMessage([FromBody] CreateWebApiCommand command)
         => (await _mediator.Send(command)).ToActionResult();
-
 
 }

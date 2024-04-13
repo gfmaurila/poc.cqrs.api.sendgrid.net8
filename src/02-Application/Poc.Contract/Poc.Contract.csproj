@@ -6,6 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Command\TryWhatsApp\Interfaces\**" />
+    <EmbeddedResource Remove="Command\TryWhatsApp\Interfaces\**" />
+    <None Remove="Command\TryWhatsApp\Interfaces\**" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Ardalis.Result" Version="7.0.0" />
 		<PackageReference Include="MongoDB.Bson" Version="2.19.0" />
@@ -25,10 +31,6 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\03-Domain\Poc.Domain\Poc.Domain.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Command\TryWhatsApp\Interfaces\" />
 	</ItemGroup>
 
 </Project>

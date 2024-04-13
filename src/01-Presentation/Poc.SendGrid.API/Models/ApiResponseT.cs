@@ -1,4 +1,4 @@
-﻿namespace Poc.Twilio.API.Models;
+﻿namespace Poc.SendGrid.API.Models;
 
 /// <inheritdoc />
 public sealed class ApiResponse<T> : ApiResponse

@@ -1,13 +1,13 @@
 {
   "profiles": {
 
-    "Poc.Twilio.API": {
+    "Poc.SendGrid.API": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "hotReloadEnabled": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7229;http://localhost:5079",
+      "applicationUrl": "https://localhost:7229;http://localhost:6000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

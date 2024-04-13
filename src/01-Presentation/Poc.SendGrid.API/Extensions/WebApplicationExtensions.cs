@@ -1,7 +1,7 @@
 ﻿using Microsoft.OpenApi.Models;
 using System.Reflection;
 
-namespace Poc.Twilio.API.Extensions;
+namespace Poc.SendGrid.API.Extensions;
 
 public static class WebApplicationExtensions
 {
@@ -11,7 +11,7 @@ public static class WebApplicationExtensions
         {
             c.SwaggerDoc("v1", new OpenApiInfo
             {
-                Title = "Poc.Twilio.API",
+                Title = "Poc.SendGrid.API",
                 Version = "v1",
                 Description = "Api de autenticação de usuários",
                 Contact = new OpenApiContact
@@ -43,7 +43,7 @@ public static class WebApplicationExtensions
         app.UseSwagger();
         app.UseSwaggerUI(c =>
         {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", "Poc.Twilio.API");
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "Poc.SendGrid.API");
         });
     }
 }

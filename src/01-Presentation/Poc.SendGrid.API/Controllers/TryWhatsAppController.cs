@@ -1,12 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Poc.Contract.Command.TryWhatsApp.Request;
-using Poc.Twilio.API.Extensions;
-using Poc.Twilio.API.Models;
+using Poc.SendGrid.API.Extensions;
+using Poc.SendGrid.API.Models;
 using System.ComponentModel;
 using System.Net.Mime;
 
-namespace Poc.Twilio.API.Controllers;
+namespace Poc.SendGrid.API.Controllers;
 
 /// <summary>
 /// Controlador responsável por operações relacionadas a registro.

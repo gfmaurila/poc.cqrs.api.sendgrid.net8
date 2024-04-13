@@ -1,8 +1,8 @@
 ﻿using Ardalis.Result;
 using Microsoft.AspNetCore.Mvc;
-using Poc.Twilio.API.Models;
+using Poc.SendGrid.API.Models;
 
-namespace Poc.Twilio.API.Extensions;
+namespace Poc.SendGrid.API.Extensions;
 
 public static class ResultExtensions
 {

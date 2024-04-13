@@ -1,2 +1,2 @@
-﻿namespace Poc.Twilio.API.Models;
+﻿namespace Poc.SendGrid.API.Models;
 public sealed record ApiError(string Message);

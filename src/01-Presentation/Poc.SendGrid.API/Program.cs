@@ -6,7 +6,7 @@ using Poc.Command;
 using Poc.Contract.MappingProfile;
 using Poc.DistributedCache;
 using Poc.Query;
-using Poc.Twilio.API.Extensions;
+using Poc.SendGrid.API.Extensions;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -56,6 +56,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-app.Logger.LogInformation("----- Iniciando a aplicação - Poc.Twilio.API...");
+app.Logger.LogInformation("----- Iniciando a aplicação - Poc.SendGrid.API...");
 
 app.Run();

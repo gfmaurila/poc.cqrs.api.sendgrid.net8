@@ -1,4 +1,4 @@
-﻿namespace Poc.Twilio.API.Models;
+﻿namespace Poc.SendGrid.API.Models;
 public static class HealthCheckTags
 {
     public static readonly string[] DatabaseTags = new[] { "database_tag" };

@@ -1,4 +1,4 @@
-﻿namespace Poc.Twilio.API.Models;
+﻿namespace Poc.SendGrid.API.Models;
 
 /// <summary>
 /// Classe responsável pela a padronização das respostas da API.
